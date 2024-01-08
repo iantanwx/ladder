@@ -30,7 +30,7 @@ func main() {
 		hostEnv = "0.0.0.0"
 	}
 	
-	host := parser.String("h", "host", &argparse.Options{
+	host := parser.String("", "host", &argparse.Options{
 		Required: false,
 		Default: hostEnv,
 		Help:    "Host the webserver will listen on. Defaults to 0.0.0.0",
