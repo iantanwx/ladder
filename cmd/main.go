@@ -25,6 +25,17 @@ var cssData embed.FS
 func main() {
 	parser := argparse.NewParser("ladder", "Every Wall needs a Ladder")
 
+	hostEnv := os.Getenv("HOST")
+	if hostEnv == "" {
+		hostEnv = "0.0.0.0"
+	}
+	
+	host := parser.String("h", "host", &argparse.Options{
+		Required: false,
+		Default: hostEnv,
+		Help;    "Host the webserver will listen on. Defaults to 0.0.0.0",
+	})
+
 	portEnv := os.Getenv("PORT")
 	if os.Getenv("PORT") == "" {
 		portEnv = "8080"
