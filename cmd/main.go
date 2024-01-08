@@ -33,7 +33,7 @@ func main() {
 	host := parser.String("h", "host", &argparse.Options{
 		Required: false,
 		Default: hostEnv,
-		Help;    "Host the webserver will listen on. Defaults to 0.0.0.0",
+		Help:    "Host the webserver will listen on. Defaults to 0.0.0.0",
 	})
 
 	portEnv := os.Getenv("PORT")
