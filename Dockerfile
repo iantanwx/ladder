@@ -5,6 +5,8 @@ WORKDIR /go/src/ladder
 
 COPY . .
 
+RUN echo "dev" > ./handlers/VERSION
+
 RUN go mod download
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o ladder cmd/main.go
