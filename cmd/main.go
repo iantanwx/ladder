@@ -151,5 +151,5 @@ func main() {
 	app.Get("api/*", handlers.Api)
 	app.Get("/*", handlers.ProxySite(*ruleset))
 
-	log.Fatal(app.Listen(":" + *port))
+	log.Fatal(app.Listen(*host + ":" + *port))
 }
